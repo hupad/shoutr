@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
   has_many :sent_shouts, class_name: :shout, foreign_key: :sender_id
   has_many :received_shouts, class_name: :shout, foreign_key: :receiver_id
 
