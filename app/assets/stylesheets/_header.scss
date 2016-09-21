@@ -16,3 +16,13 @@ header {
 	@extend .navbar-default;
 	@extend .row;
 }
+
+.navbar-brand {
+	div {
+		text-indent: -9999px;
+		background: image-url("logo.png");
+		display: block;
+		width: 117px;
+		height: 40px;
+	}
+}

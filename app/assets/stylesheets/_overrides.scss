@@ -1,6 +1,16 @@
 .navbar-default {
-  border-width: 0;
-  .navbar-toggle {
-    border: none;
-  }
+	border-width: 0;
+	.navbar-toggle {
+		border: none;
+	}
+}
+
+.navbar-brand {
+	padding: $navbar-padding-horizontal;
+}
+
+.navbar-nav {
+	> li > a {
+		line-height: $line-height-navbar;
+	}
 }
