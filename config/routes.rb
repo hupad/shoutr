@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root 'shouter#feed'
   get  '/shout/new', to: 'shouter#new', as: :new_shout
-  post 'shout', to: 'shouter#create'
+  post 'shout', to: 'shouter#create', as: :shouts
   get 'welcome/index'
 
   devise_for :users
