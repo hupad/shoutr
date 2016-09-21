@@ -26,3 +26,48 @@ header {
 		height: 40px;
 	}
 }
+
+.navbar-default {
+	border-width: 0;
+	.navbar-toggle {
+		border: none;
+	}
+}
+
+.navbar-brand {
+	padding: $navbar-padding-horizontal;
+}
+
+.navbar-nav {
+	> li > a {
+		line-height: $line-height-navbar;
+		padding: $navbar-padding-horizontal ($navbar-padding-horizontal * 2);
+		&.notification-link {
+			padding: $navbar-padding-horizontal ($navbar-padding-horizontal * 2);
+			background: $brand-info;
+			margin-left: 10px;
+			&:hover {
+				background: $brand-primary-light;
+				.icon {
+					color: #FFF;
+				}
+			}
+		}
+	}
+}
+
+.megaphone-wrapper {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	background-color: $brand-primary-light;
+	float: left;
+	margin-right: 10px;
+}
+
+.shout-link {
+	@include clearfix;
+}
+.shout-text {
+	float: right;
+}

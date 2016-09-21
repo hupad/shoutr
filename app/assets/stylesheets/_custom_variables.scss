@@ -16,8 +16,10 @@
 // $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
 $brand-primary:            #009dd0;
+$brand-primary-light:      #00c0ff;
+$brand-primary-dark:       #007da7;
 // $brand-success:         #5cb85c !default;
-$brand-info:               #007da7;
+$brand-info:               $brand-primary-dark;
 // $brand-warning:         #f0ad4e !default;
 // $brand-danger:          #d9534f !default;
 
