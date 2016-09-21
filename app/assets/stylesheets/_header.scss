@@ -1,0 +1,18 @@
+header {
+	@extend .container-fluid;
+	background: $brand-primary;
+	> section {
+		> div {
+			@extend .container;
+		}
+	}
+	section {
+		@extend .row;
+	}
+}
+
+.main-nav {
+	@extend .navbar;
+	@extend .navbar-default;
+	@extend .row;
+}

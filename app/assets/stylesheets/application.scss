@@ -16,8 +16,9 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
 @import "bootstrap-sprockets";
-@import "bootstrap";
-
 @import "custom_variables";
+@import "bootstrap";
+@import "overrides";
 
 @import "layout";
+@import "header";
