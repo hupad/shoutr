@@ -1,6 +1,7 @@
 header {
 	@extend .container-fluid;
 	background: $brand-primary;
+	border-bottom: 3px solid $brand-primary-dark;
 	> section {
 		> div {
 			@extend .container;
@@ -40,12 +41,12 @@ header {
 
 .navbar-nav {
 	> li > a {
+		@include clearfix;
 		line-height: $line-height-navbar;
-		padding: $navbar-padding-horizontal ($navbar-padding-horizontal * 2);
+		padding: $navbar-padding-horizontal ($navbar-padding-horizontal * 1.75);
 		&.notification-link {
-			padding: $navbar-padding-horizontal ($navbar-padding-horizontal * 2);
 			background: $brand-info;
-			margin-left: 10px;
+			margin-left: $navbar-padding-horizontal;
 			&:hover {
 				background: $brand-primary-light;
 				.icon {
@@ -56,18 +57,24 @@ header {
 	}
 }
 
-.megaphone-wrapper {
-	border-radius: 50%;
-	width: 40px;
-	height: 40px;
-	background-color: $brand-primary-light;
-	float: left;
-	margin-right: 10px;
+.shout-text, .profile-text {
+	@extend .pull-right;
 }
 
-.shout-link {
-	@include clearfix;
+.megaphone-wrapper {
+	@extend .pull-left;
+	@extend %circle-crop;
+	background-color: $brand-primary-light;
 }
-.shout-text {
-	float: right;
+
+.profile-wrapper {
+	@extend .pull-left;
+	@extend %circle-crop;
+	img {
+		max-width: 100%;
+	}
+}
+
+.header-text {
+	@extend .pull-right;
 }

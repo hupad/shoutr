@@ -33,7 +33,12 @@
             -->
             <li>
               <%= link_to '#', class: 'shout-link' do %>
-                <div class="megaphone-wrapper"><div class="icon megaphone"></div></div><div class="shout-text">Send a shout</div>
+                <div class="megaphone-wrapper"><div class="icon megaphone"></div></div><div class="header-text">Send a shout</div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to '#', class: 'profile-link' do %>
+                <div class="profile-wrapper"><img src="<%= asset_path 'default.jpg' %>"></div><div class="header-text">Your Name</div>
               <% end %>
             </li>
             <li>
