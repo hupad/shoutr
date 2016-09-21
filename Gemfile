@@ -10,6 +10,8 @@ gem 'puma'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'devise'
 gem 'faker'
+gem 'searchkick'
+gem 'simple_form'
 
 # gem 'capistrano-rails', group: :development
 
