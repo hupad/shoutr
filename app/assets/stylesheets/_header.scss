@@ -64,7 +64,7 @@ header {
 .megaphone-wrapper {
 	@extend .pull-left;
 	@extend %circle-crop;
-	background-color: $brand-primary-light;
+	background-color: $brand-secondary;
 }
 
 .profile-wrapper {
