@@ -39,7 +39,9 @@
                 <%= link_to '#', class: 'notification-link dropdown-toggle', data: { toggle: 'dropdown' } do %>
                   <div class="icon bolt">Notifications</div>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Log out</a></li>
+                    <li>
+                      <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+                    </li>
                   </ul>
                 <% end %>
               </li>
