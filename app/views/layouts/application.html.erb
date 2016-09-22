@@ -25,9 +25,9 @@
 								<%= render 'layouts/primary_sidebar', collection: @top_hustlers %>
 							</div>
 						<% end %>
-						<% if request.env['PATH_INFO'] == "shout/new" %>
+						<% if request.env['PATH_INFO'] == "/shout/new" %>
 							<div class="col-md-3 primary-sidebar sidebar">
-								<!-- <%= render 'layouts/primary_sidebar', collection: @top_hustlers %> -->
+								<%= render 'layouts/primary_sidebar_new' %>
 							</div>
 						<% end %>
 						<div class="col-md-6 page-content">

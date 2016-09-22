@@ -112,69 +112,75 @@
 		margin: 14px auto 0;
 	}
 	&.engineering-java {
-		background-image: image-url('badges/core-java.png');
+		background-image: image-url('badges/engineering-java.png');
 		width: 46px;
 		height: 42px;
 		margin: 14px auto 0;
 	}
 	&.engineering-baby {
-		background-image: image-url('badges/core-baby.png');
+		background-image: image-url('badges/engineering-baby.png');
 		width: 44px;
 		height: 49px;
 		margin: 14px auto 0;
 	}
 	&.engineering-perl {
-		background-image: image-url('badges/core-perl.png');
+		background-image: image-url('badges/engineering-perl.png');
 		width: 49px;
 		height: 43px;
 		margin: 14px auto 0;
 	}
 	&.engineering-clean {
-		background-image: image-url('badges/core-clean.png');
-		width: 44px;
-		height: 41px;
+		background-image: image-url('badges/engineering-clean.png');
+		width: 42px;
+		height: 38px;
+		margin: 14px auto 0;
+	}
+	&.engineering-lean {
+		background-image: image-url('badges/engineering-lean.png');
+		width: 39px;
+		height: 33px;
 		margin: 14px auto 0;
 	}
 	&.engineering-scrumscious {
-		background-image: image-url('badges/core-scrumscious.png');
-		width: 44px;
-		height: 41px;
+		background-image: image-url('badges/engineering-scrumscious.png');
+		width: 31px;
+		height: 23px;
 		margin: 14px auto 0;
 	}
 	&.design-pixel {
-		background-image: image-url('badges/core-pixel.png');
-		width: 44px;
-		height: 41px;
+		background-image: image-url('badges/design-pixel.png');
+		width: 43px;
+		height: 44px;
 		margin: 14px auto 0;
 	}
 	&.design-vinci {
-		background-image: image-url('badges/core-vinci.png');
-		width: 44px;
+		background-image: image-url('badges/design-vinci.png');
+		width: 41px;
 		height: 41px;
 		margin: 14px auto 0;
 	}
 	&.design-bootstrapper {
-		background-image: image-url('badges/core-bootstrapper.png');
-		width: 44px;
-		height: 41px;
+		background-image: image-url('badges/design-bootstrapper.png');
+		width: 36px;
+		height: 42px;
 		margin: 14px auto 0;
 	}
 	&.design-gridlocker {
-		background-image: image-url('badges/core-gridlocker.png');
-		width: 44px;
-		height: 41px;
+		background-image: image-url('badges/design-gridlocker.png');
+		width: 33px;
+		height: 45px;
 		margin: 14px auto 0;
 	}
 	&.design-guru {
-		background-image: image-url('badges/core-guru.png');
-		width: 44px;
-		height: 41px;
+		background-image: image-url('badges/design-guru.png');
+		width: 40px;
+		height: 50px;
 		margin: 14px auto 0;
 	}
 	&.design-bff {
-		background-image: image-url('badges/core-bff.png');
-		width: 44px;
-		height: 41px;
+		background-image: image-url('badges/design-bff.png');
+		width: 47px;
+		height: 32px;
 		margin: 14px auto 0;
 	}
 }
