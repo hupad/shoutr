@@ -7,10 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/header' %>
+	<header>
+		<section>
+			<div>
+				<%= render 'layouts/header' %>
+			</div>
+		</section>
+	</header>
 	<%= render 'layouts/flash/messages' %>
-	<div class="container">
-		<%= yield %>
+	<div class="wrapper">
+		<section>
+			<div>
+				<section>
+					<% if user_signed_in? %>
+						<div class="col-md-3 primary-sidebar sidebar">
+							<%= render 'layouts/primary_sidebar' %>
+						</div>
+						<div class="col-md-6 page-content">
+							<%= yield %>
+						</div>
+						<div class="col-md-3 secondary-sidebar sidebar">
+							<%= render 'layouts/secondary_sidebar' %>
+						</div>
+					<% else %>
+						<div class="col-md-5 login-page">
+							<%= yield %>
+						</div>
+						<div class="col-md-7"></div>
+					<% end %>
+				</section>
+			</div>
+		</section>
 	</div>
 </body>
 </html>
