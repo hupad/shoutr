@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get 'badges/new', to: "badges#new", as: :new_badge
   post 'badges', to: "badges#create", as: :badges
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
 end
