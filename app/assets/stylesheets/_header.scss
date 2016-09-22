@@ -136,3 +136,9 @@ header {
 		display: block; // make quaternary nav work on hover instead of click
 	}
 }
+
+.dropdown-menu {
+	.notification-link {
+		display: none; // TODO: FIGURE OUT WHY THIS IS NECESSARY?????????? WTF !!!! That anchor tag should not exist
+	}
+}
