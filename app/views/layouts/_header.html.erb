@@ -31,7 +31,7 @@
                 <%= link_to '#', class: 'profile-link' do %>
                   <div class="profile-wrapper"><img src="<%= asset_path 'default.jpg' %>"></div>
                   <div class="header-text">
-                    <%= current_user.last_name %>
+                    <%= current_user.first_name %>&nbsp;<%= current_user.last_name %>
                   </div>
                 <% end %>
               </li>
