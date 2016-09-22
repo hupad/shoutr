@@ -4,3 +4,17 @@ input, textarea {
 		outline: none;
 	}
 }
+
+.wrapper {
+	@extend .container;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	> section {
+		> div {
+			@extend .container;
+		}
+	}
+	section {
+		@extend .row;
+	}
+}
