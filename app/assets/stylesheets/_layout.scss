@@ -49,3 +49,20 @@ h1, h2, h3 {
 	@include button-size($padding-base-vertical, $padding-base-horizontal, 18px, $line-height-base, $btn-border-radius-base);
 	border: none;
 }
+
+input, textarea {
+	border: 1px solid #e4e4e4;
+	background: $gray-lighter;
+	outline: none;
+}
+
+.panel {
+	@extend %shadow;
+	border: none;
+	input, textarea, select {
+		width: 50%;
+	}
+	textarea {
+		height: 50%;
+	}
+}

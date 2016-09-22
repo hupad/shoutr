@@ -53,12 +53,6 @@
 	    margin: 0 10px 0 0;
 	    border: 0;
 	}
-	&.handshake {
-		background-image: image-url('badges/core-handshake.png');
-		width: 44px;
-		height: 41px;
-		margin: 14px auto 0;
-	}
 	&.comment {
 		@extend .pull-left;
 		background-image: image-url('comment.png');
@@ -78,6 +72,110 @@
 		&.blue {
 			background-image: image-url('like-hover.png');
 		}
+	}
+
+
+	&.core-done {
+		background-image: image-url('badges/core-done.png');
+		width: 42px;
+		height: 42px;
+		margin: 14px auto 0;
+	}
+	&.core-handshake {
+		background-image: image-url('badges/core-handshake.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.core-propeller {
+		background-image: image-url('badges/core-propeller.png');
+		width: 56px;
+		height: 56px;
+		margin: 14px auto 0;
+	}
+	&.core-win {
+		background-image: image-url('badges/core-win.png');
+		width: 31px;
+		height: 33px;
+		margin: 14px auto 0;
+	}
+	&.core-shine {
+		background-image: image-url('badges/core-shine.png');
+		width: 28px;
+		height: 46px;
+		margin: 14px auto 0;
+	}
+	&.core-thinking {
+		background-image: image-url('badges/core-thinking.png');
+		width: 43px;
+		height: 47px;
+		margin: 14px auto 0;
+	}
+	&.engineering-java {
+		background-image: image-url('badges/core-java.png');
+		width: 46px;
+		height: 42px;
+		margin: 14px auto 0;
+	}
+	&.engineering-baby {
+		background-image: image-url('badges/core-baby.png');
+		width: 44px;
+		height: 49px;
+		margin: 14px auto 0;
+	}
+	&.engineering-perl {
+		background-image: image-url('badges/core-perl.png');
+		width: 49px;
+		height: 43px;
+		margin: 14px auto 0;
+	}
+	&.engineering-clean {
+		background-image: image-url('badges/core-clean.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.engineering-scrumscious {
+		background-image: image-url('badges/core-scrumscious.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.design-pixel {
+		background-image: image-url('badges/core-pixel.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.design-vinci {
+		background-image: image-url('badges/core-vinci.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.design-bootstrapper {
+		background-image: image-url('badges/core-bootstrapper.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.design-gridlocker {
+		background-image: image-url('badges/core-gridlocker.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.design-guru {
+		background-image: image-url('badges/core-guru.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.design-bff {
+		background-image: image-url('badges/core-bff.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
 	}
 }
 a:hover {
