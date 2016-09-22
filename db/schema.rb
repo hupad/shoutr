@@ -11,23 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921221550) do
+ActiveRecord::Schema.define(version: 20160922122920) do
 
-  create_table "badges", force: :cascade do |t|
-    t.string   "badge_url",  limit: 255
-    t.integer  "points",     limit: 4
+  create_table "badge_categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "badges", force: :cascade do |t|
+    t.string   "badge_url",                limit: 255
+    t.integer  "points",                   limit: 4
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.string   "name",                     limit: 255
+    t.integer  "badge_category_id",        limit: 4
+    t.string   "badge_image_file_name",    limit: 255
+    t.string   "badge_image_content_type", limit: 255
+    t.integer  "badge_image_file_size",    limit: 4
+    t.datetime "badge_image_updated_at"
+  end
+
+  add_index "badges", ["badge_category_id"], name: "index_badges_on_badge_category_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.integer  "shout_id",   limit: 4
     t.text     "comment",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "user_id",    limit: 4
   end
 
   add_index "comments", ["shout_id"], name: "index_comments_on_shout_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
     t.integer  "shout_id",   limit: 4
@@ -67,6 +83,8 @@ ActiveRecord::Schema.define(version: 20160921221550) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "badges", "badge_categories"
   add_foreign_key "comments", "shouts"
+  add_foreign_key "comments", "users"
   add_foreign_key "likes", "shouts"
 end

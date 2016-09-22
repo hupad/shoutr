@@ -1,8 +1,12 @@
 class ShouterController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:new, :create, :like, :comment, :show, :feed]
+
+	def show
+		
+	end
 
 	def	feed
-
+		@shouts = Shout.includes(:likes, :comments)
 	end
 
 	def new
@@ -16,10 +20,18 @@ class ShouterController < ApplicationController
 			notes: permit_params[:notes],
 			badge_id: permit_params[:badge_id]
 		)
-		byebug
+
 		if @shout.save
 			redirect_to root_path, notice: "Your shout has been posted."
 		end
+	end
+
+	def like
+		
+	end
+
+	def comment
+		
 	end
 
 	private

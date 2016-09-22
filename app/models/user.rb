@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
   has_many :sent_shouts, class_name: :shout, foreign_key: :sender_id
   has_many :received_shouts, class_name: :shout, foreign_key: :receiver_id
 
+  has_many :likes
+  has_many :comments
+
 end
