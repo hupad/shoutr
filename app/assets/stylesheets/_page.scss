@@ -1,0 +1,5 @@
+.page-content {
+	h1 {
+		@extend %block-heading;
+	}
+}

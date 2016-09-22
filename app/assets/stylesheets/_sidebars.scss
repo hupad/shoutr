@@ -1,14 +1,9 @@
 .sidebar {
 	h2, h3 {
-		background: $brand-gray;
-		color: #fff;
-		padding: 18px;
-		text-align: center;
-		line-height: 24px;
-		font-size: 20px;
-		margin-top: 0;
+		@extend %block-heading;
 	}
 	aside {
+		@extend %shadow;
 		background: #fff;
 	}
 }
