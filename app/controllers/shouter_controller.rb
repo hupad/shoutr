@@ -15,7 +15,6 @@ class ShouterController < ApplicationController
 
 	def create
 		receiver = User.find_by(email: permit_params[:email])
-		byebug
 		@shout = Shout.new(
 			sender_id: current_user.id,
 			receiver_id: receiver.id,
