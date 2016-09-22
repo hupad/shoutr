@@ -24,7 +24,6 @@ class ShouterController < ApplicationController
 		)
 		
 		@shout.badge = badge
-		byebug
 		if @shout.save
 			redirect_to root_path, notice: "Your shout has been posted."
 		end
