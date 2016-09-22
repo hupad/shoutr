@@ -8,9 +8,11 @@
 		<section>
 			<div class="large-badge core"><div class="icon core-handshake"></div></div>
 			<p><span class="shout-name"><%= shout.receiver.full_name %></span>shouted by <%= shout.sender.full_name %></p>
-			<p class="badge-name">Propeller Spinner</p>
-			<p class="badge-category">Core Values</p>
-			<p class="badge-why">“Greg always makes the plane to Dallas, and he even makes the plane back home!”</p>
+			<% if !shout.badge.nil? %>
+				<p class="badge-name"><%= shout.badge.name %></p>
+				<p class="badge-category"><%= shout.badge.badge_category.name %></p>
+			<% end %>
+			<p class="badge-why"><%= shout.notes %></p>
 		</section>
 		<section>
 			<div class="shout-activity">

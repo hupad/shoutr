@@ -26,7 +26,9 @@
         </li>
         <li>
           <%= link_to '#', class: 'profile-link' do %>
-            <div class="profile-wrapper"><img src="<%= asset_path 'default.jpg' %>"></div>
+            <div class="profile-wrapper">
+                <img src="<%= current_user.avatar.url(:thumb) %>">
+            </div>
             <div class="header-text">
               <%= current_user.first_name %>&nbsp;<%= current_user.last_name %>
             </div>
@@ -36,6 +38,9 @@
           <%= link_to '#', class: 'notification-link dropdown-toggle', data: { toggle: 'dropdown' } do %>
             <div class="icon bolt">Notifications</div>
             <ul class="dropdown-menu">
+              <li>
+                <%= link_to "Edit Profile", edit_user_registration_path %>
+              </li>
               <li>
                 <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
               </li>

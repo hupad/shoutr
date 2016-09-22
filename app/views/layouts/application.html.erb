@@ -20,9 +20,16 @@
 			<div>
 				<section>
 					<% if user_signed_in? %>
-						<div class="col-md-3 primary-sidebar sidebar">
-							<%= render 'layouts/primary_sidebar' %>
-						</div>
+						<% if request.env['PATH_INFO'] == "/" %>
+							<div class="col-md-3 primary-sidebar sidebar">
+								<%= render 'layouts/primary_sidebar', collection: @top_hustlers %>
+							</div>
+						<% end %>
+						<% if request.env['PATH_INFO'] == "shout/new" %>
+							<div class="col-md-3 primary-sidebar sidebar">
+								<!-- <%= render 'layouts/primary_sidebar', collection: @top_hustlers %> -->
+							</div>
+						<% end %>
 						<div class="col-md-6 page-content">
 							<%= yield %>
 						</div>

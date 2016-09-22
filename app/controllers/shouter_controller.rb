@@ -6,7 +6,7 @@ class ShouterController < ApplicationController
 	end
 
 	def	feed
-		@shouts = Shout.order(:created_at)
+		@shouts = Shout.includes(:badge, badge: [:badge_category] ).order('created_at DESC')
 	end
 
 	def new
@@ -35,6 +35,13 @@ class ShouterController < ApplicationController
 
 	def comment
 		
+	end
+
+	def hustlers
+		super
+		respond_to do |format|
+			format.js {render nothing: true} 
+		end
 	end
 
 	private
