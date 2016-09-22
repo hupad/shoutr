@@ -33,6 +33,16 @@ h1, h2, h3 {
 	@extend %badge;
 	@extend .pull-left;
 	margin: 0 2px 2px 0;
+	width: 10px;
+	height: 10px;
+}
+
+.large-badge {
+	@extend %badge;
+	@extend .pull-left;
+	width: 70px;
+	height: 70px;
+	margin: 0 25px 25px 0;
 }
 
 .btn {

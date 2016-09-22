@@ -23,13 +23,7 @@
 
 .hustler-photo {
 	@extend .pull-left;
-	width: 75px;
-	height: 75px;
-	overflow: hidden;
-	margin: 0 25px 25px 0;
-	img {
-		min-width: 100%;
-	}
+	@extend %profile-photo;
 }
 
 .invite-photo {

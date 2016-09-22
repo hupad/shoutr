@@ -53,4 +53,38 @@
 	    margin: 0 10px 0 0;
 	    border: 0;
 	}
+	&.handshake {
+		background-image: image-url('badges/core-handshake.png');
+		width: 44px;
+		height: 41px;
+		margin: 14px auto 0;
+	}
+	&.comment {
+		@extend .pull-left;
+		background-image: image-url('comment.png');
+		width: 13px;
+		height: 13px;
+		margin: 3px 5px 0 0;
+		&.blue {
+			background-image: image-url('comment-hover.png');
+		}
+	}
+	&.like {
+		@extend .pull-left;
+		background-image: image-url('like.png');
+		width: 18px;
+		height: 14px;
+		margin: 2px 5px 0 0;
+		&.blue {
+			background-image: image-url('like-hover.png');
+		}
+	}
+}
+a:hover {
+	.icon.like.blue {
+		background-image: image-url('like-hover2.png');
+	}
+	.icon.comment.blue {
+		background-image: image-url('comment-hover2.png');
+	}
 }

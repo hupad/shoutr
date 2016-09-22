@@ -7,8 +7,6 @@
 }
 
 %badge {
-	width: 10px;
-	height: 10px;
 	border-radius: 50%;
 	&.core {
 		background-color: $brand-warning;
@@ -41,4 +39,15 @@
 	-webkit-box-shadow: 0 2px 6px -3px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 0 2px 6px -3px rgba(0, 0, 0, 0.25);
 	box-shadow: 0 2px 6px -3px rgba(0, 0, 0, 0.25);
+}
+
+%profile-photo {
+	width: 75px;
+	height: 75px;
+	overflow: hidden;
+	margin: 0 25px 25px 0;
+	img {
+		min-width: 100%;
+		max-width: 100%;
+	}
 }

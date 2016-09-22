@@ -1,27 +1,26 @@
 <h1><div class="icon news"></div><span>Newsfeed</span></h1>
 
 <% @shouts.each do |shout| %>
-	<div class="row">
-
-		<div class="col-md-4">
-			<div>
-				<%= image_tag("default.jpg", size: "70x70", class: "large-badge core") %>
+	<div class="row shout">
+		<section class="shout-time">
+			<p><%= time_ago_in_words(shout.created_at) %> ago</p>
+		</section>
+		<section>
+			<div class="large-badge core"><div class="icon handshake"></div></div>
+			<p><span class="shout-name"><%= shout.receiver.full_name %></span>shouted by <%= shout.sender.full_name %></p>
+			<p class="badge-name">Propeller Spinner</p>
+			<p class="badge-category">Core Values</p>
+			<p class="badge-why">“Greg always makes the plane to Dallas, and he even makes the plane back home!”</p>
+		</section>
+		<section>
+			<div class="shout-activity">
+				<p class="like-wrapper"><span class="icon like"></span>12</p>
+				<p class="comment-wrapper"><span class="icon comment"></span>12</p>
 			</div>
-		</div>
-		
-		<div class="col-md-6">
-			<h3>
-				<%= shout.receiver.full_name %> 
-			</h3>
-			<p>
-				shouted at <%= shout.sender.full_name %>
-			</p>
-		</div>
-
-		<div class="col-md-2">
-			<p>
-				<%= time_ago_in_words(shout.created_at) %>
-			</p>
-		</div>
+			<div class="shout-actions">
+				<p class="like-wrapper"><a href="#"><span class="icon like blue"></span>Like</a></p>
+				<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
+			</div>
+		</section>
 	</div>
 <% end %>
