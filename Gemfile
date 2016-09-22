@@ -14,6 +14,7 @@ gem 'searchkick'
 gem 'simple_form'
 gem 'aws-sdk', '~> 2.3'
 gem "paperclip", "~> 5.0.0"
+gem "figaro"
 
 # gem 'capistrano-rails', group: :development
 

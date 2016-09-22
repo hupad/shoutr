@@ -21,7 +21,7 @@
 				<section>
 					<% if user_signed_in? %>
 						<div class="col-md-3 primary-sidebar sidebar">
-							<%= render 'layouts/primary_sidebar' %>
+							<%= render 'layouts/primary_sidebar', collection: @top_hustlers %>
 						</div>
 						<div class="col-md-6 page-content">
 							<%= yield %>
