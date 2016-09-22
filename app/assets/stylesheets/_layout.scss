@@ -7,8 +7,8 @@ input, textarea {
 
 .wrapper {
 	@extend .container;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 	> section {
 		> div {
 			@extend .container;
@@ -16,7 +16,7 @@ input, textarea {
 	}
 	section {
 		@extend .row;
-		&.top-hustlers {
+		&.top-hustlers, &.invite-sidebar {
 			margin: 0;
 			& + .top-hustlers {
 				padding-top: 0;
@@ -33,4 +33,9 @@ h1, h2, h3 {
 	@extend %badge;
 	@extend .pull-left;
 	margin: 0 2px 2px 0;
+}
+
+.btn {
+	@include button-size($padding-base-vertical, $padding-base-horizontal, 18px, $line-height-base, $btn-border-radius-base);
+	border: none;
 }

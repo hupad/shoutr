@@ -98,8 +98,8 @@ $headings-line-height:       1;
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-// $padding-base-vertical:     6px !default;
-// $padding-base-horizontal:   12px !default;
+$padding-base-vertical:        15px;
+$padding-base-horizontal:      60px;
 
 // $padding-large-vertical:    10px !default;
 // $padding-large-horizontal:  16px !default;
@@ -161,23 +161,23 @@ $border-radius-small:          5px !default;
 
 // $btn-primary-color:              #fff !default;
 // $btn-primary-bg:                 $brand-primary !default;
-// $btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+$btn-primary-border:                transparent;
 
 // $btn-success-color:              #fff !default;
 // $btn-success-bg:                 $brand-success !default;
-// $btn-success-border:             darken($btn-success-bg, 5%) !default;
+$btn-success-border:                transparent;
 
 // $btn-info-color:                 #fff !default;
 // $btn-info-bg:                    $brand-info !default;
-// $btn-info-border:                darken($btn-info-bg, 5%) !default;
+$btn-info-border:                   transparent;
 
 // $btn-warning-color:              #fff !default;
 // $btn-warning-bg:                 $brand-warning !default;
-// $btn-warning-border:             darken($btn-warning-bg, 5%) !default;
+$btn-warning-border:                transparent;
 
 // $btn-danger-color:               #fff !default;
 // $btn-danger-bg:                  $brand-danger !default;
-// $btn-danger-border:              darken($btn-danger-bg, 5%) !default;
+$btn-danger-border:                 transparent;
 
 // $btn-link-disabled-color:        $gray-light !default;
 
