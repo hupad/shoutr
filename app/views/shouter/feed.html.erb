@@ -6,7 +6,7 @@
 			<p><%= time_ago_in_words(shout.created_at) %> ago</p>
 		</section>
 		<section>
-			<div class="large-badge core"><div class="icon handshake"></div></div>
+			<div class="large-badge core"><div class="icon core-handshake"></div></div>
 			<p><span class="shout-name"><%= shout.receiver.full_name %></span>shouted by <%= shout.sender.full_name %></p>
 			<% if !shout.badge.nil? %>
 				<p class="badge-name"><%= shout.badge.name %></p>
