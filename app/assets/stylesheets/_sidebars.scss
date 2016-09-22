@@ -6,6 +6,7 @@
 		text-align: center;
 		line-height: 24px;
 		font-size: 20px;
+		margin-top: 0;
 	}
 	aside {
 		background: #fff;
@@ -33,5 +34,24 @@
 	margin: 0 25px 25px 0;
 	img {
 		min-width: 100%;
+	}
+}
+
+.invite-photo {
+	width: 100%;
+	img {
+		width: 100%;
+	}
+}
+
+.invite-text {
+	padding: 25px;
+	text-align: center;
+	h6 {
+		font-size: 19px;
+		font-weight: 300;
+	}
+	.btn {
+		margin-top: 10px;
 	}
 }
