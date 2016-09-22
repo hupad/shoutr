@@ -78,3 +78,41 @@ header {
 .header-text {
 	@extend .pull-right;
 }
+
+.navbar-search {
+	@extend .pull-left;
+	margin: 15px 0 15px 50px;
+}
+
+.navbar-search {
+	input {
+		border: none;
+		background-color: $brand-primary-dark;
+		min-width: 200px;
+		color: #FFF;
+	}
+	::-webkit-input-placeholder {
+	    color:    $brand-primary;
+	}
+	:-moz-placeholder {
+	   color:    $brand-primary;
+	   opacity:  1;
+	}
+	::-moz-placeholder {
+	   color:    $brand-primary;
+	   opacity:  1;
+	}
+	:-ms-input-placeholder {
+	   color:    $brand-primary;
+	}
+	> * {
+		@extend .pull-left;
+	}
+	> a {
+		padding: 10px;
+		background-color: $brand-primary-dark;
+		&:hover {
+			background-color: $brand-primary-light;
+		}
+	}
+}

@@ -16,42 +16,32 @@
         </div>
 
         <% if user_signed_in? %>
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <%= link_to '#', class: 'shout-link' do %>
-                      <div class="megaphone-wrapper"><div class="icon megaphone"></div></div><div class="header-text">Send a shout</div>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to '#', class: 'profile-link' do %>
-                      <div class="profile-wrapper"><img src="<%= asset_path 'default.jpg' %>"></div>
-                      <div class="header-text">
-                        <%= current_user.first_name %>
-                      </div>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to '#', class: 'notification-link' do %>
-                      <div class="icon bolt">Notifications</div>
-                    <% end %>
-                  </li>
-                </ul>
-              </div>
-        <% else %>
-               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <%= link_to new_user_session_path, class: 'shout-link' do %>
-                      <div class="megaphone-wrapper"><div class="icon megaphone"></div></div><div class="header-text">Log In</div>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to "Sign up", class: 'profile-link' do %>
-                    <% end %>
-                  </li>
-                </ul>
-              </div>
+          <div class="navbar-search">
+            <a href="#"><div class="icon search">Search</div></a>
+            <input name="employee-search" type="text" placeholder="Search for an Employee">
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to '#', class: 'shout-link' do %>
+                  <div class="megaphone-wrapper"><div class="icon megaphone"></div></div><div class="header-text">Send a shout</div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to '#', class: 'profile-link' do %>
+                  <div class="profile-wrapper"><img src="<%= asset_path 'default.jpg' %>"></div>
+                  <div class="header-text">
+                    <%= current_user.first_name %>
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to '#', class: 'notification-link' do %>
+                  <div class="icon bolt">Notifications</div>
+                <% end %>
+              </li>
+            </ul>
+          </div>
         <% end %>
 
       </nav>
