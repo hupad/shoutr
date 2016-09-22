@@ -6,7 +6,7 @@ class ShouterController < ApplicationController
 	end
 
 	def	feed
-		@shouts = Shout.includes(:likes, :comments)
+		@shouts = Shout.all
 	end
 
 	def new
