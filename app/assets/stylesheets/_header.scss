@@ -16,6 +16,17 @@ header {
 	@extend .navbar;
 	@extend .navbar-default;
 	@extend .row;
+	.navbar-nav {
+		// Remove background color from open dropdown
+		> .open > a {
+			&,
+			&:hover,
+			&:focus {
+				background-color: $brand-primary-light;
+				color: $navbar-default-link-active-color;
+			}
+		}
+	}
 }
 
 .navbar-brand {
@@ -55,6 +66,9 @@ header {
 			}
 		}
 	}
+	> li > .dropdown-menu {
+		border-top: 3px solid $brand-primary-dark;
+	}
 }
 
 .shout-text, .profile-text {
@@ -77,4 +91,54 @@ header {
 
 .header-text {
 	@extend .pull-right;
+}
+
+.navbar-search {
+	@extend .pull-left;
+	margin: 15px 0 15px 50px;
+}
+
+.navbar-search {
+	input {
+		border: none;
+		background-color: $brand-primary-dark;
+		min-width: 200px;
+		color: #FFF;
+	}
+	::-webkit-input-placeholder {
+	    color:    $brand-primary;
+	}
+	:-moz-placeholder {
+	   color:    $brand-primary;
+	   opacity:  1;
+	}
+	::-moz-placeholder {
+	   color:    $brand-primary;
+	   opacity:  1;
+	}
+	:-ms-input-placeholder {
+	   color:    $brand-primary;
+	}
+	> * {
+		@extend .pull-left;
+	}
+	> a {
+		padding: 10px;
+		background-color: $brand-primary-dark;
+		&:hover {
+			background-color: $brand-primary-light;
+		}
+	}
+}
+
+.nav {
+	> li:hover > .dropdown-menu {
+		display: block; // make quaternary nav work on hover instead of click
+	}
+}
+
+.dropdown-menu {
+	.notification-link {
+		display: none; // TODO: FIGURE OUT WHY THIS IS NECESSARY?????????? WTF !!!! That anchor tag should not exist
+	}
 }

@@ -1,0 +1,6 @@
+input, textarea {
+	padding: 10px;
+	&:focus {
+		outline: none;
+	}
+}
