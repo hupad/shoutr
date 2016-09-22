@@ -5,3 +5,24 @@
 	margin-right: 10px;
 	overflow: hidden;
 }
+
+%badge {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	&.core {
+		background-color: $brand-warning;
+	}
+	&.engineering {
+		background-color: $brand-success;
+	}
+	&.design {
+		background-color: $brand-tertiary;
+	}
+	&.qa {
+		background-color: $brand-primary-light;
+	}
+	&.product {
+		background-color: $brand-danger;
+	}
+}

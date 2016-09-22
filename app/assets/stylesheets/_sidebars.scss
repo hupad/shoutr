@@ -2,9 +2,36 @@
 	h2, h3 {
 		background: $brand-gray;
 		color: #fff;
-		padding: 20px;
+		padding: 18px;
 		text-align: center;
-		line-height: 20px;
+		line-height: 24px;
 		font-size: 20px;
+	}
+	aside {
+		background: #fff;
+	}
+}
+
+.top-hustlers {
+	padding: 25px;
+	h4 {
+		font-size: 19px;
+		font-weight: 300;
+		margin: 0 0 3px;
+	}
+	h5 {
+		font-size: 14px;
+		margin: 0 0 3px;
+	}
+}
+
+.hustler-photo {
+	@extend .pull-left;
+	width: 75px;
+	height: 75px;
+	overflow: hidden;
+	margin: 0 25px 25px 0;
+	img {
+		min-width: 100%;
 	}
 }

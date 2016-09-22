@@ -7,8 +7,8 @@ input, textarea {
 
 .wrapper {
 	@extend .container;
-	margin-top: 25px;
-	margin-bottom: 25px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	> section {
 		> div {
 			@extend .container;
@@ -16,5 +16,21 @@ input, textarea {
 	}
 	section {
 		@extend .row;
+		&.top-hustlers {
+			margin: 0;
+			& + .top-hustlers {
+				padding-top: 0;
+			}
+		}
 	}
+}
+
+h1, h2, h3 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.small-badge {
+	@extend %badge;
+	@extend .pull-left;
+	margin: 0 2px 2px 0;
 }

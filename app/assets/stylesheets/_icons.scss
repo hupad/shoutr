@@ -33,4 +33,24 @@
 			}
 		}
 	}
+	&.trophy {
+		background-image: image-url('trophy.png');
+		height: 24px;
+		width: 19px;
+		display: inline-block;
+	    overflow: hidden;
+	    vertical-align: top;
+	    margin: 0 10px 0 0;
+	    border: 0;
+	}
+	&.news {
+		background-image: image-url('news.png');
+		height: 24px;
+		width: 24px;
+		display: inline-block;
+	    overflow: hidden;
+	    vertical-align: top;
+	    margin: 0 10px 0 0;
+	    border: 0;
+	}
 }
