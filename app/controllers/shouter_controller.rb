@@ -6,7 +6,7 @@ class ShouterController < ApplicationController
 	end
 
 	def	feed
-		@shouts = Shout.all
+		@shouts = Shout.order(:created_at)
 	end
 
 	def new

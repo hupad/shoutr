@@ -16,3 +16,83 @@ User.delete_all
 		}
 	)
 end
+
+
+Badge.create({
+		name: "Make the Plane",
+		points: 5	
+}}
+
+Badge.create({
+		name: "Serve to Win",
+		points: 5	
+}}
+
+Badge.create({
+	name: "Orkin Award",
+	points: 5
+})
+
+Badge.create({
+	name: "Picasso Award",
+	points: 5
+})
+
+Badge.create({
+	name: "Sherlock Award",
+	points: 5	
+})
+Badge.create({
+		name: "Go-Go-Gadget Award",
+		points: 5
+})
+
+Badge.create({
+		name: "Baby Byte Award",
+		points: 5
+})
+
+Badge.create({
+	name: "Java Junkie",
+	points: 5
+})
+
+Badge.create({
+	name: "The Mother of Perl Award",
+	points: 5
+})
+
+Badge.create({
+	name: "Pixel Pusher",
+	points: 5
+})
+
+Badge.create({
+	name: "da Vinci Award",
+	points: 5
+})
+
+Badge.create({
+	name: "Quick turn around",
+	points: 5
+})
+
+Badge.create({
+	name: "Accepts Criticism",
+	points: 5
+})
+
+Badge.create({
+	name: "The Mother of Perl Award",
+	points: 5
+})
+
+Badge.create({
+	name: "Mind Craft",
+	points: 5
+})
+
+Badge.create({
+	name: "Zuckerberg Award",
+	points: 5
+})
