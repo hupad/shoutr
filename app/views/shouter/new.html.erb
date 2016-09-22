@@ -4,18 +4,18 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="form-group">
-				<%= f.input :email, label: "Who do you want to shout at?", class: "form-control" %>
+				<%= f.input :email, class: "form-control", placeholder: "Enter employee's email.", label: false %>
 			</div>
 			<div class="form-group">
-				<%= f.input :notes,label: "Why?", as: :text, class: "form-control" %>
+				<%= f.input :notes, as: :text, class: "form-control", placeholder: "Why? Give a reason why you are shouting.", label: false %>
 			</div>
 			<div>
-				<%= f.label "Select a badge" %> 
-				<%= f.select :badge_id, Badge.all.map { |r| [r.name, r.id] }, include_blank: true %>
+				<%= f.select :badge_id, Badge.all.map { |r| [r.name, r.id] }, label: false, prompt: "Select a badge." %>
 			</div>
-		</div>
-		<div>
-			<%= f.submit %>
+			<br>
+			<div class="form-group">
+				<%= f.submit %>
+			</div>
 		</div>
 	</div>
 <% end %>

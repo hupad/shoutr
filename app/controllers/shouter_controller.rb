@@ -15,13 +15,16 @@ class ShouterController < ApplicationController
 
 	def create
 		receiver = User.find_by(email: permit_params[:email])
+		badge = Badge.find(permit_params[:badge_id])
+
 		@shout = Shout.new(
 			sender_id: current_user.id,
 			receiver_id: receiver.id,
 			notes: permit_params[:notes],
-			badge_id: permit_params[:badge_id]
 		)
-
+		
+		@shout.badge = badge
+		byebug
 		if @shout.save
 			redirect_to root_path, notice: "Your shout has been posted."
 		end
