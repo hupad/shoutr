@@ -25,4 +25,12 @@
 			background-image: image-url('search-hover.png');
 		}
 	}
+	.open & {
+		&.bolt {
+			background-image: image-url('bolt-hover.png');
+			a:hover & {
+				background-image: image-url('bolt-hover.png');
+			}
+		}
+	}
 }
