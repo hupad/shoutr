@@ -1,14 +1,9 @@
 .sidebar {
 	h2, h3 {
-		background: $brand-gray;
-		color: #fff;
-		padding: 18px;
-		text-align: center;
-		line-height: 24px;
-		font-size: 20px;
-		margin-top: 0;
+		@extend %block-heading;
 	}
 	aside {
+		@extend %shadow;
 		background: #fff;
 	}
 }
@@ -28,13 +23,7 @@
 
 .hustler-photo {
 	@extend .pull-left;
-	width: 75px;
-	height: 75px;
-	overflow: hidden;
-	margin: 0 25px 25px 0;
-	img {
-		min-width: 100%;
-	}
+	@extend %profile-photo;
 }
 
 .invite-photo {

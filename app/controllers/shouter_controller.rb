@@ -6,7 +6,7 @@ class ShouterController < ApplicationController
 	end
 
 	def	feed
-		@shouts = Shout.order('created_at DESC')
+		@shouts = Shout.includes(:badge, badge: [:badge_category] ).order('created_at DESC')
 	end
 
 	def new

@@ -1,0 +1,87 @@
+.page-content {
+	h1 {
+		@extend %block-heading;
+	}
+	p {
+		color: $text-gray;
+		&.badge-why {
+			color: $brand-gray;
+		}
+	}
+}
+
+.row.shout {
+	@extend %shadow;
+	background: #fff;
+	margin: 0 0 10px;
+	padding: 15px 15px 25px;
+	section{
+		margin: 0 10px;
+		&.shout-time {
+			margin: 0;
+		}
+	}
+	p {
+		line-height: 19px;
+	}
+	section + section + section {
+		border-top: 1px solid $brand-gray;
+		padding-top: 15px;
+		margin-top: 15px;
+	}
+}
+
+.feed-photo {
+	@extend .pull-left;
+	@extend %profile-photo;
+}
+
+.shout-name {
+	font-size: 19px;
+	font-weight: 500;
+	margin-right: 10px;
+	color: $text-dark-gray;
+}
+
+.badge-name {
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.shout-activity {
+	@extend .pull-left;
+	p {
+		margin-bottom: 0;
+		+ p {
+			margin-left: 10px;
+		}
+	}
+}
+.shout-actions {
+	@extend .pull-right;
+	p {
+		margin-bottom: 0;
+		+ p {
+			margin-left: 10px;
+		}
+	}
+}
+
+.like-wrapper, .comment-wrapper {
+	@extend .pull-left;
+}
+
+a {
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.shout-time {
+	p {
+		margin: 0 10px 0 0;
+		color: $brand-gray;
+		text-align: right;
+	}
+}

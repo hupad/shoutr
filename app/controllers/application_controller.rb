@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 						.select("shouts.*, count(shouts.receiver_id) as top_hustlers")
 						.order('top_hustlers DESC')
 						.limit(3)
-	byebug
+	#byebug
   end
 end
