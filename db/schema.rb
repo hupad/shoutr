@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922160952) do
+ActiveRecord::Schema.define(version: 20160922195120) do
 
   create_table "badge_categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -50,9 +50,11 @@ ActiveRecord::Schema.define(version: 20160922160952) do
     t.integer  "count",      limit: 4
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "user_id",    limit: 4
   end
 
   add_index "likes", ["shout_id"], name: "index_likes_on_shout_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "shouts", force: :cascade do |t|
     t.integer  "sender_id",   limit: 4
@@ -89,5 +91,6 @@ ActiveRecord::Schema.define(version: 20160922160952) do
   add_foreign_key "comments", "shouts"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "shouts"
+  add_foreign_key "likes", "users"
   add_foreign_key "shouts", "badges"
 end
