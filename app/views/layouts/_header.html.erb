@@ -26,9 +26,7 @@
         </li>
         <li>
           <%= link_to '#', class: 'profile-link' do %>
-            <div class="profile-wrapper">
-                <img src="<%= current_user.avatar.url(:thumb) %>">
-            </div>
+            <div class="profile-wrapper" style="background-image:'<%= current_user.avatar.url(:thumb) %>'"></div>
             <div class="header-text">
               <%= current_user.first_name %>&nbsp;<%= current_user.last_name %>
             </div>

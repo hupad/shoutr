@@ -1,29 +1,29 @@
 <h1>Create Badge</h1>
+<div class="row page">
+	<%= simple_form_for @badge do |f| %>
+		
+		<div class="panel panel-default">
+			<div class="panel-body">
 
+				<div class="form-group">
+					<%= f.label :category %>
+					<%= f.select :badge_category, BadgeCategory.all.map { |r| [r.name, r.id] }, include_blank: true %>
+				</div>
 
-<%= simple_form_for @badge do |f| %>
-	
-	<div class="panel panel-default">
-		<div class="panel-body">
+				<div class="form-group">
+					<%= f.input :name %>
+				</div>
 
-			<div class="form-group">
-				<%= f.label :category %>
-				<%= f.select :badge_category, BadgeCategory.all.map { |r| [r.name, r.id] }, include_blank: true %>
+				<div class="form-group">
+					<%= f.input :badge_image %>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+
 			</div>
-
-			<div class="form-group">
-				<%= f.input :name %>
-			</div>
-
-			<div class="form-group">
-				<%= f.input :badge_image %>
-			</div>
-
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</div>
-
 		</div>
-	</div>
 
-<% end %>
+	<% end %>
+</div>

@@ -50,10 +50,11 @@ h1, h2, h3 {
 	border: none;
 }
 
-input, textarea {
+input, textarea, .well {
 	border: 1px solid #e4e4e4;
 	background: $gray-lighter;
 	outline: none;
+	box-shadow: none;
 }
 
 .panel {
