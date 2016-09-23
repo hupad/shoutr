@@ -84,10 +84,17 @@ header {
 	background-color: $brand-secondary;
 }
 
+.icon-wrapper {
+	@extend .pull-left;
+	@extend %circle-crop;
+	background-color: $brand-primary;
+}
+
 .profile-wrapper {
 	@extend .pull-left;
 	@extend %circle-crop;
 	img {
+		min-width: 100%;
 		max-width: 100%;
 	}
 }

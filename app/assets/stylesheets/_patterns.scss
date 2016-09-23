@@ -51,3 +51,22 @@
 		max-width: 100%;
 	}
 }
+
+%wrapper {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	> section {
+		> div {
+			@extend .container;
+		}
+	}
+	section {
+		@extend .row;
+		&.top-hustlers, &.invite-sidebar {
+			margin: 0;
+			& + .top-hustlers {
+				padding-top: 0;
+			}
+		}
+	}
+}

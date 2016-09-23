@@ -6,7 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<% if request.env['PATH_INFO'] == "/users/sign_in" %>
+	<body class="sign-in">
+<% else %>
+	<body>
+<% end %>
 	<header>
 		<section>
 			<div>
@@ -36,10 +40,9 @@
 							<%= render 'layouts/secondary_sidebar' %>
 						</div>
 					<% else %>
-						<div class="col-md-5 login-page">
+						<div class="set-width">
 							<%= yield %>
 						</div>
-						<div class="col-md-7"></div>
 					<% end %>
 				</section>
 			</div>
