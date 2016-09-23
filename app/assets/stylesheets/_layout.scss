@@ -7,22 +7,11 @@ input, textarea {
 
 .wrapper {
 	@extend .container;
-	margin-top: 25px;
-	margin-bottom: 25px;
-	> section {
-		> div {
-			@extend .container;
-		}
-	}
-	section {
-		@extend .row;
-		&.top-hustlers, &.invite-sidebar {
-			margin: 0;
-			& + .top-hustlers {
-				padding-top: 0;
-			}
-		}
-	}
+	@extend %wrapper;
+}
+.wrapper-fluid {
+	@extend .container-fluid;
+	@extend %wrapper;
 }
 
 h1, h2, h3 {
@@ -39,7 +28,6 @@ h1, h2, h3 {
 
 .large-badge {
 	@extend %badge;
-	@extend .pull-left;
 	width: 70px;
 	height: 70px;
 	margin: 0 25px 25px 0;
@@ -66,4 +54,7 @@ input, textarea, .well {
 	textarea {
 		height: 50%;
 	}
+}
+.sign-in {
+	background: image-url('bg-main.jpg') no-repeat center 73px fixed;
 }

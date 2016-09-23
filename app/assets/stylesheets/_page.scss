@@ -13,8 +13,9 @@
 	}
 }
 
-.row.shout {
+.row.shout, .log-in-div {
 	@extend %shadow;
+	color: $text-color;
 	background: #fff;
 	margin: 0 0 10px;
 	padding: 15px 15px 25px;
@@ -34,13 +35,24 @@
 	}
 }
 
-.row.shouts, .row.page {
+.row.page {
 	@extend %shadow;
 	background: #fff;
 	margin: 0 0 10px;
 	padding: 15px 15px 25px;
 	section{
 		margin: 0 10px;
+	}
+}
+
+.row.shouts {
+	margin: 0;
+	padding: 15px 15px 25px;
+	section{
+		margin: 0 10px;
+	}
+	.large-badge {
+		@extend .pull-left;
 	}
 }
 
@@ -99,55 +111,60 @@ a {
 	}
 }
 
-
-// LOG IN FORM CSS
-#bg {
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
-  z-index: -1;
+.set-width {
+	width: 500px;
+	color: #fff;
 }
 
-#bg img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
-}
-
-.log-in-form {
-	background-color: white;
-	margin-left: -50px;
-	margin-right: 50px;
-	padding: 30px;
-	width: 350px;
-	height: 600px;
-
-	input + input {
-		margin-top: 10px;
+.welcome-text {
+	p {
+		font-weight: 300;
+		margin-top: 20px;
+		font-size: 18px;
+		margin-bottom: 55px;
+	}
+	h2 {
+		font-weight: 700;
+		font-size: 38px;
+		line-height: 1.3;
 	}
 }
 
-.log-in {
-
-}
-
-.welcome-text{
-	margin-left: -50px;
-}
-
-.welcome-text h2{
-	color: white;
-}
-
-.welcome-text p{
-	padding-top: 30px;
-	padding-bottom: 30px;
-	color: white;
+.log-in-div {
+	h2 {	
+		font-size: 19px;
+		font-weight: 700;
+		line-height: 40px;
+		margin-right: 10px;
+		margin-top: 0;
+		color: $text-dark-gray;
+	}
+	input:not([type='checkbox']) {
+		display: block;
+		width: 100%;
+		+ input {
+			margin-top: 10px;
+			&[type='checkbox'] {
+				margin-top: 4px;
+				width: 12px;
+			}
+		}
+	}
+	.field {
+		margin: 10px 0;
+		@extend .clearfix;
+		> * {
+			@extend .pull-left;
+		}
+		label {
+			font-weight: 400;
+			margin: 0 0 0 10px;
+		}
+	}
+	ul {
+		@extend .clearfix;
+		padding: 0;
+		list-style-type: none;
+		margin: 10px 0 0;
+	}
 }
