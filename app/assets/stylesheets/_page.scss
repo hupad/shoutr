@@ -85,3 +85,56 @@ a {
 		text-align: right;
 	}
 }
+
+
+// LOG IN FORM CSS
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+  z-index: -1;
+}
+
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.log-in-form {
+	background-color: white;
+	margin-left: -50px;
+	margin-right: 50px;
+	padding: 30px;
+	width: 350px;
+	height: 600px;
+
+	input + input {
+		margin-top: 10px;
+	}
+}
+
+.log-in {
+
+}
+
+.welcome-text{
+	margin-left: -50px;
+}
+
+.welcome-text h2{
+	color: white;
+}
+
+.welcome-text p{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: white;
+}
