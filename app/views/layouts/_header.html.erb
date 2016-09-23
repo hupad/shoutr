@@ -25,7 +25,7 @@
           <% end %>
         </li>
         <li>
-          <%= link_to '#', class: 'profile-link' do %>
+          <%= link_to '#', class: 'profile-link dropdown-toggle' do %>
             <div class="profile-wrapper">              
               <% @user_avatar = current_user.avatar %>
               <% if @user_avatar %>
@@ -35,11 +35,6 @@
             <div class="header-text">
               <%= current_user.first_name %>&nbsp;<%= current_user.last_name %>
             </div>
-          <% end %>
-        </li>
-        <li class="nav-notification">
-          <%= link_to '#', class: 'notification-link dropdown-toggle', data: { toggle: 'dropdown' } do %>
-            <div class="icon bolt">Notifications</div>
             <ul class="dropdown-menu">
               <li>
                 <%= link_to "Edit Profile", edit_user_registration_path %>
@@ -48,6 +43,11 @@
                 <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
               </li>
             </ul>
+          <% end %>
+        </li>
+        <li class="nav-notification">
+          <%= link_to '#', class: 'notification-link', data: { toggle: 'dropdown' } do %>
+            <div class="icon bolt">Notifications<span class="notification-badge">12</span></div>
           <% end %>
         </li>
       </ul>
