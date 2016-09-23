@@ -64,11 +64,14 @@
 		margin-top: 15px;
 	}
 	.row {
-		margin-left: 0;
-		margin-right: 0;
+		margin: 0 20px;
 	}
 	p {
 		text-align: center;
+	}
+	.wrapper & .well {
+		padding: 0;
+		margin: 0;
 	}
 }
 
@@ -89,6 +92,9 @@
 	.category-title {
 		font-size: $font-size-base;
 	}
+	.row {
+		margin: 0;
+	}
 }
 
 .badge-category {
@@ -107,5 +113,11 @@
 	}
 	.category-title {
 		font-size: $font-size-base;
+	}
+}
+
+.well {
+	h2 {
+		margin-bottom: 20px;
 	}
 }

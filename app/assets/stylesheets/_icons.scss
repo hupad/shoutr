@@ -4,8 +4,8 @@
 
 	&.bolt {
 		background-image: image-url('bolt.png');
-		height: 30px;
 		width: 19px;
+		height: 30px;
 		margin: 5px 0;
 		a:hover & {
 			background-image: image-url('bolt-hover.png');
@@ -13,9 +13,29 @@
 	}
 	&.megaphone {
 		background-image: image-url('megaphone.png');
-		height: 20px;
 		width: 21px;
+		height: 20px;
 		margin: 9px auto 0;
+	}
+	&.title-megaphone {
+		background-image: image-url('title-megaphone.png');
+		width: 25px;
+		height: 24px;
+		display: inline-block;
+	    overflow: hidden;
+	    vertical-align: top;
+	    margin: 0 10px 0 0;
+	    border: 0;
+	}
+	&.title-profile {
+		background-image: image-url('title-profile.png');
+		width: 22px;
+		height: 24px;
+		display: inline-block;
+	    overflow: hidden;
+	    vertical-align: top;
+	    margin: 0 10px 0 0;
+	    border: 0;
 	}
 	&.search {
 		background-image: image-url('search.png');
