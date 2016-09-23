@@ -14,8 +14,8 @@
 		
 		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 				
-				<%= f.email_field :email, autofocus: true, placeholder: "Email" %>
-				<%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+				<%= f.email_field :email, autofocus: true, placeholder: "Email", class: "full-width-input" %>
+				<%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "full-width-input" %>
 
 			<% if devise_mapping.rememberable? -%>
 				<div class="field">
@@ -25,7 +25,10 @@
 			<% end -%>
 
 			<div class="actions">
-				<%= f.submit raw("Log in &blacktriangleright;"), class: "btn btn-primary" %>
+				<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+					<%= link_to "Forgot Password?", new_password_path(resource_name), class: "forgot-link" %>
+				<% end -%>
+				<%= f.submit raw("Let's Go &blacktriangleright;"), class: "btn btn-primary pull-right" %>
 			</div>
 		<% end %>
 	</div>
@@ -34,7 +37,12 @@
 			<h2><div class="icon-wrapper"><div class="icon sign-up"></div></div>Signup</h2>
 			<h3>Not a member? Not a problem. It’s all free. All of it.</h3>
 
-			<%= link_to "Get started &blacktriangleright;", new_registration_path(resource_name) %>
+			<%= link_to raw("Get Started &blacktriangleright;"), new_registration_path(resource_name), class: "btn btn-primary full-width-input" %>
 		</div>
 	<% end -%>
+</div>
+
+<div class="login-featured">
+	<p>Featured By:</p>
+	<img src="<%= asset_path 'featured-logos.png' %>">
 </div>
