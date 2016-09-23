@@ -113,7 +113,9 @@ a {
 
 .set-width {
 	width: 500px;
-	color: #fff;
+	.sign-in & {
+		color: #fff;
+	}
 }
 
 .welcome-text {
