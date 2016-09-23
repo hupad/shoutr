@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
 10.times do
 	User.create(
@@ -12,114 +5,150 @@ User.delete_all
 			email: Faker::Internet.email,
 			first_name: Faker::Name.first_name,
 			last_name: Faker::Name.last_name,
-			password: welcome
+			password: "welcome123"
 		}
 	)
 end
 
+BadgeCategory.delete_all
 BadgeCategory.create({
-	name: "General"
-})
-
-BadgeCategory.create({
-	name: "Engineering"
+	name: "General",
+	short_name: "core"
 })
 
 BadgeCategory.create({
-	name: "Design"
+	name: "Engineering",
+	short_name: "engineering"
 })
 
+BadgeCategory.create({
+	name: "Design",
+	short_name: "design"
+})
+
+Badge.delete_all
 Badge.create({
-		name: "Make the Plane",
+		name: "Propeller Spinner",
 		points: 5,
-		badge_category_id: 1
-}}
+		badge_category_id: 1,
+		short_name: "propeller"
+})
 
 Badge.create({
-		name: "Serve to Win",
+		name: "Serves to Win",
 		points: 5,
-		badge_category_id: 2
-}}
-
-Badge.create({
-	name: "Orkin Award",
-	points: 5,
-	badge_category_id: 3
+		badge_category_id: 1,
+		short_name: "win"
 })
 
 Badge.create({
-	name: "Picasso Award",
+	name: "Gets it Done",
 	points: 5,
-	badge_category_id: 2
+	badge_category_id: 1,
+	short_name: "done"
 })
 
 Badge.create({
-	name: "Sherlock Award",
+	name: "Handshake",
 	points: 5,
-	badge_category_id: 3
+	badge_category_id: 1,
+	short_name: "handshake"
 })
+
 Badge.create({
-		name: "Go-Go-Gadget Award",
+	name: "Shine-on",
+	points: 5,
+	badge_category_id: 1,
+	short_name: "shine"
+})
+
+Badge.create({
+		name: "Beyond Thinking",
 		points: 5,
-		badge_category_id: 1
+		badge_category_id: 1,
+		short_name: "thinking"
 })
 
 Badge.create({
-		name: "Baby Byte Award",
+		name: "Java Barista",
 		points: 5,
-		badge_category_id: 1
+		badge_category_id: 2,
+		short_name: "java"
 })
 
 Badge.create({
-	name: "Java Junkie",
+	name: "Baby Byte",
 	points: 5,
-	badge_category_id: 2
+	badge_category_id: 2,
+	short_name: "baby"
 })
 
 Badge.create({
-	name: "The Mother of Perl Award",
+	name: "Mother of Perl",
 	points: 5,
-	badge_category_id: 2
+	badge_category_id: 2,
+	short_name: "perl"
+})
+
+Badge.create({
+	name: "Clean Coders",
+	points: 5,
+	badge_category_id: 2,
+	short_name: "clean"
+})
+
+Badge.create({
+	name: "Scrumcious",
+	points: 5,
+	badge_category_id: 2,
+	short_name: "scrumcious"
+})
+
+Badge.create({
+	name: "Lean & Mean",
+	points: 5,
+	badge_category_id: 2,
+	short_name: "lean"
 })
 
 Badge.create({
 	name: "Pixel Pusher",
 	points: 5,
-	badge_category_id: 3
+	badge_category_id: 3,
+	short_name: "pixel"
 })
 
 Badge.create({
-	name: "da Vinci Award",
+	name: "Da Vinci",
 	points: 5,
-	badge_category_id: 1
+	badge_category_id: 3,
+	short_name: "vinci"
 })
 
 Badge.create({
-	name: "Quick turn around",
+	name: "Bootstrapper",
 	points: 5,
-	badge_category_id: 2
+	badge_category_id: 3,
+	short_name: "bootstrapper"
 })
 
 Badge.create({
-	name: "Accepts Criticism",
+	name: "Gridlocker",
 	points: 5,
-	badge_category_id: 3
+	badge_category_id: 3,
+	short_name: "gridlocker"
 })
 
 Badge.create({
-	name: "The Mother of Perl Award",
+	name: "Graphic Guru",
 	points: 5,
-	badge_category_id: 1
+	badge_category_id: 3,
+	short_name: "guru"	
 })
 
 Badge.create({
-	name: "Mind Craft",
+	name: "Devs BFF",
 	points: 5,
-	badge_category_id: 2
-})
-
-Badge.create({
-	name: "Zuckerberg Award",
-	points: 5,
-	badge_category_id: 3
+	badge_category_id: 3,
+	short_name: "bff"	
 })

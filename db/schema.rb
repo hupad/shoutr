@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922202621) do
+ActiveRecord::Schema.define(version: 20160923021911) do
 
   create_table "badge_categories", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "short_name", limit: 255
   end
 
   create_table "badges", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160922202621) do
     t.string   "badge_image_content_type", limit: 255
     t.integer  "badge_image_file_size",    limit: 4
     t.datetime "badge_image_updated_at"
+    t.string   "short_name",               limit: 255
   end
 
   add_index "badges", ["badge_category_id"], name: "index_badges_on_badge_category_id", using: :btree

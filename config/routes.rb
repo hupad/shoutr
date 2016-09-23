@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'hustlers', to: "shouter#hustlers", as: :top_hustlers
 
+  get 'profile/:user_id', to: "profile#index", as: :user_profile
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
 end
