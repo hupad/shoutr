@@ -21,7 +21,12 @@
 				<p class="comment-wrapper"><span class="icon comment"></span>12</p>
 			</div>
 			<div class="shout-actions">
-				<p class="like-wrapper"><a href="#"><span class="icon like blue"></span>Like</a></p>
+				<p class="like-wrapper">
+					<%= link_to like_shout_path(shout), remote: true, method: :post, id: "like-shout-button" do %>
+						Like
+						<span class="icon like blue"></span>
+					<% end %>
+				</p>
 				<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
 			</div>
 		</section>

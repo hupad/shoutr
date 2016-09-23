@@ -30,11 +30,23 @@ class ShouterController < ApplicationController
 	end
 
 	def like
+		@shout = Shout.find(params[:id])
+
+		@like = Like.new
+		@like.shout = @shout
+		@like.user = current_user
 		
+		@like.save
+
+		respond_to do |format|
+			format.js {render nothing: true} 
+		end
 	end
 
 	def comment
-		
+		respond_to do |format|
+			format.js {render nothing: true} 
+		end
 	end
 
 	def hustlers
