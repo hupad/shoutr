@@ -134,7 +134,7 @@ a {
 
 .set-width {
 	width: 500px;
-	.sign-in & {
+	.sign-in-bg & {
 		color: #fff;
 	}
 }
@@ -161,6 +161,13 @@ a {
 		margin-right: 10px;
 		margin-top: 0;
 		color: $text-dark-gray;
+	}
+	h3 {
+		font-family: $font-family-sans-serif;
+		font-size: 19px;
+		font-weight: 300;
+		line-height: 1.2;
+
 	}
 	input:not([type='checkbox']) {
 		display: block;
@@ -202,5 +209,12 @@ a {
 	img {
 		min-width: 100%;
 		max-width: 100%;
+	}
+}
+
+.log-in-div {
+	margin-bottom: 0;
+	+ .log-in-div {
+		background-color: $gray-lighter;
 	}
 }
