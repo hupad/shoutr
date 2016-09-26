@@ -36,7 +36,7 @@ $(document).ready(function(){
 		}).done(function(msg){
 				that.likeButtonId.html("Unlike" + "<span class='icon like blue'></span>");
 				that.likeTextId.html("<span class='icon like'></span>" +parseInt( that.likesCount + 1 ) );
-				that.likeButtonId.data("like", "false");
+				that.likeButtonId.attr("data-like", "false");
 		}).fail(function(){
 			alert("Sorry, you may have already liked this shout.");
 		});
@@ -56,9 +56,7 @@ $(document).ready(function(){
 				that.likeButtonId.text("Like");
 				that.likeTextId.text("<span class=icon like></span>" + that.likesCount - 1);
 				that.likeButtonId.data("like", true);
-		}).fail(function(){
-			alert("Sorry, you may have already liked this shout.");
-		});
+		})
 	}
 
 

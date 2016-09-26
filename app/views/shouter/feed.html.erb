@@ -24,7 +24,7 @@
 			<div class="shout-actions">
 				<% if current_user.liked(shout) %>
 					<p class="like-wrapper">
-						<%= link_to "", data: {like: true}, remote: false, onClick: "likeShout(#{shout.id})", id: "like-shout-button#{shout.id}" do %>
+						<%= link_to "", data: {like: false}, remote: false, onClick: "likeShout(#{shout.id})", id: "like-shout-button#{shout.id}" do %>
 							Unlike
 							<span class="icon like blue"></span>
 						<% end %>
@@ -39,7 +39,7 @@
 				<% end %>
 				<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
 			</div>
-			
+
 		</section>
 	</div>
 <% end %>
