@@ -1,0 +1,6 @@
+<p class="like-wrapper">
+	<%= link_to "", data: {like: false}, remote: false, onClick: "likeShout(#{shout.id})", id: "like-shout-button#{shout.id}" do %>
+		Unlike
+		<span class="icon like blue"></span>
+	<% end %>
+</p>

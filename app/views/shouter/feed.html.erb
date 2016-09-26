@@ -18,24 +18,14 @@
 		<section>
 			<div class="shout-activity">
 				<p class="like-wrapper" id="like<%= shout.id %>"><span class="icon like"></span><%= shout.likes.count %></p>
-				<p class="comment-wrapper"><span class="icon comment"></span>12</p>
+				<p class="comment-wrapper"><span class="icon comment"></span><%= shout.comments.count %></p>
 			</div>
 
 			<div class="shout-actions">
 				<% if current_user.liked(shout) %>
-					<p class="like-wrapper">
-						<%= link_to "", data: {like: false}, remote: false, onClick: "likeShout(#{shout.id})", id: "like-shout-button#{shout.id}" do %>
-							Unlike
-							<span class="icon like blue"></span>
-						<% end %>
-					</p>
+					<%= render( partial: 'activity/unlike', locals: {shout: shout} ) %>
 				<% else %>
-					<p class="like-wrapper">
-						<%= link_to "", data: {like: true}, remote: true, onClick: "likeShout(#{shout.id})", id: "like-shout-button#{shout.id}" do %>
-							Like
-							<span class="icon like blue"></span>
-						<% end %>
-					</p>
+					<%= render( partial: 'activity/like', locals: {shout: shout} ) %>
 				<% end %>
 				<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
 			</div>

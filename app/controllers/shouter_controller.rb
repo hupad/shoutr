@@ -6,7 +6,7 @@ class ShouterController < ApplicationController
 	end
 
 	def	feed
-		@shouts = Shout.includes(:badge, :likes, :receiver, :sender, badge: [:badge_category] )
+		@shouts = Shout.includes(:badge, :likes, :comments, :receiver, :sender, badge: [:badge_category] )
 										.order('id DESC')
 										.limit(10)
 	end
