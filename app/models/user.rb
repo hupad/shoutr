@@ -17,4 +17,9 @@ class User < ActiveRecord::Base
   def full_name
   	self.first_name + " " + self.last_name
   end
+
+  def liked(shout)
+    shout.likes(user_id: self.id).count == 1
+  end
+
 end

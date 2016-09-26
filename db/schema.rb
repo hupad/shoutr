@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160923021911) do
+ActiveRecord::Schema.define(version: 20160925014056) do
 
   create_table "badge_categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160923021911) do
     t.integer  "user_id",    limit: 4
   end
 
+  add_index "likes", ["shout_id", "user_id"], name: "index_likes_on_shout_id_and_user_id", unique: true, using: :btree
   add_index "likes", ["shout_id"], name: "index_likes_on_shout_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 

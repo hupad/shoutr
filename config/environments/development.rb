@@ -41,4 +41,12 @@ Rails.application.configure do
     path: "/:class/:attachment/:id_partition/:style/:filename"
   }
 
+  config.after_initialize do
+    Bullet.enable = true
+
+    Bullet.rails_logger = true
+
+    Bullet.bullet_logger = true
+  end
+
 end

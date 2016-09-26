@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'shout', to: 'shouter#create', as: :shouts
   get 'shout/:id', to: 'shouter#show', as: :shout
   post 'shout/:id/like', to: "shouter#like", as: :like_shout
+  delete 'shout/:id/like', to: "shouter#unlike", as: :unlike_shout
   post 'shout/:id/comment', to: "shouter#comment"
 
   get 'badges/new', to: "badges#new", as: :new_badge

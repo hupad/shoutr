@@ -1,12 +1,14 @@
 class ShouterController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create, :like, :comment, :show, :feed]
+	before_action :authenticate_user!, only: [:new, :create, :like, :unlike, :comment, :show, :feed]
 
 	def show
 		
 	end
 
 	def	feed
-		@shouts = Shout.includes(:badge, badge: [:badge_category] ).order('created_at DESC')
+		@shouts = Shout.includes(:badge, :likes, :receiver, :sender, badge: [:badge_category] )
+										.order('id DESC')
+										.limit(10)
 	end
 
 	def new
@@ -43,6 +45,20 @@ class ShouterController < ApplicationController
 		end
 	end
 
+	def unlike
+
+		shout_id = params[:id]
+
+		@like = Like.find_by(shout_id: shout_id, user_id: current_user.id)
+
+		@like.destroy
+
+		respond_to do |format|
+			format.js {render nothing: true}
+		end
+
+	end
+
 	def comment
 		respond_to do |format|
 			format.js {render nothing: true} 
@@ -61,4 +77,6 @@ class ShouterController < ApplicationController
 	def permit_params
 		params.require(:shout).permit(:email, :sender_id, :receiver_id, :notes, :badge_id)
 	end
+
+
 end
