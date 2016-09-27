@@ -49,4 +49,6 @@ Rails.application.configure do
     Bullet.bullet_logger = true
   end
 
+  config.reload_classes_only_on_change = false
+
 end

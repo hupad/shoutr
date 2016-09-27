@@ -1,14 +1,21 @@
 class ShouterController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create, :like, :unlike, :comment, :show, :feed]
+	before_action :authenticate_user!, only: [:new, :create, :like, :unlike, :show, :feed]
 
 	def show
 		
 	end
 
 	def	feed
-		@shouts = Shout.includes(:badge, :likes, :comments, :receiver, :sender, badge: [:badge_category] )
+		@shouts = Shout.includes(:badge, :likes, :receiver, :sender, badge: [:badge_category] )
 										.order('id DESC')
 										.limit(10)
+
+		get_likes_for_shout
+
+		get_comments_for_shout
+
+		@liked_shout_map = current_user.liked_shouts
+
 	end
 
 	def new
@@ -59,27 +66,22 @@ class ShouterController < ApplicationController
 
 	end
 
-	def comments
-		@comments = Shout.find(params[:id]).comments.pluck(:comment, :user_id)
-	end
-
-
-	def new_comment
-		
-	end
-
-	def hustlers
-		super
-		respond_to do |format|
-			format.js {render nothing: true} 
-		end
-	end
-
 	private
 
 	def permit_params
 		params.require(:shout).permit(:email, :sender_id, :receiver_id, :notes, :badge_id)
 	end
 
+	def get_likes_for_shout
+		
+		@likes_shout_map = Shout.joins(:likes).group("shouts.id").count
+		
+	end
+
+	def get_comments_for_shout
+		
+		@comments_shout_map = Shout.joins(:likes).group("shouts.id").count
+
+	end
 
 end

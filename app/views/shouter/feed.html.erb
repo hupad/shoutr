@@ -17,12 +17,12 @@
 		</section>
 		<section>
 			<div class="shout-activity">
-				<p class="like-wrapper" id="like<%= shout.id %>"><span class="icon like"></span><%= shout.likes.count %></p>
-				<p class="comment-wrapper"><span class="icon comment"></span><%= shout.comments.count %></p>
+				<p class="like-wrapper" id="like<%= shout.id %>"><span class="icon like"></span><%= @likes_shout_map[shout.id] || 0 %></p>
+				<p class="comment-wrapper"><span class="icon comment"></span><%= @comments_shout_map[shout.id] || 0 %></p>
 			</div>
 
 			<div class="shout-actions">
-				<% if current_user.liked(shout) %>
+				<% if @likes_shout_map[shout.id] %>
 					<%= render( partial: 'activity/unlike', locals: {shout: shout} ) %>
 				<% else %>
 					<%= render( partial: 'activity/like', locals: {shout: shout} ) %>
