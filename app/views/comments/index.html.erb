@@ -1,0 +1,16 @@
+<h1>Comments</h1>
+
+<% @comments.each do |comment| %>
+	
+	<h2> <%= comment.user.first_name %> </h2>
+	<p>	<%= time_ago_in_words( comment.created_at ) %> ago </p>
+	<p> <%= comment.text %> </p>
+	
+<% end %>
+
+<%= simple_form_for @comment do |f| %>
+	
+	<%= f.input :text, as: :text, label: false, placeholder: "Comment on this shout.", input_html: {style: 'width: 690px'} %>
+	<%= f.submit "Submit", class: 'btn btn-primary' %>
+
+<% end %>

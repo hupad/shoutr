@@ -59,10 +59,13 @@ class ShouterController < ApplicationController
 
 	end
 
-	def comment
-		respond_to do |format|
-			format.js {render nothing: true} 
-		end
+	def comments
+		@comments = Shout.find(params[:id]).comments.pluck(:comment, :user_id)
+	end
+
+
+	def new_comment
+		
 	end
 
 	def hustlers

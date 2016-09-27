@@ -27,7 +27,10 @@
 				<% else %>
 					<%= render( partial: 'activity/like', locals: {shout: shout} ) %>
 				<% end %>
-				<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
+				<p class="comment-wrapper">
+				<%= link_to comments_path(shout) do %>
+					<span class="icon comment blue"></span>Comment</a></p>
+				<% end %>				
 			</div>
 
 		</section>
