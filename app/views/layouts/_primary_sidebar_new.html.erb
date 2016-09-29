@@ -3,98 +3,29 @@
 
 	<div class="row shouts">
 		<section>
-			<div class="large-badge core"><div class="icon core-handshake"></div></div>
+			<div class="large-badge" id="largeBadgeCategory"><div class="icon" id="badgeType"></div></div>
 			<p class="badge-name">Java Barista</p>
 			<p class="badge-category">Engineering</p>
 
 			<p class="badge-why">This employee crafts the perfect cup of code consistently. They serve the team with the freshest insight and implement accordingly.
 
-</p>
+			</p>
 		</section>
 	</div>
 
 	<div class="badge-list">
 		<section class="well">
 			<div class="row badge-category">
-				<p class="category-title">Core Values</p>
-				<section>
-					<div class="large-badge core"><div class="icon core-done"></div></div>
-					<p>Gets it done</p>
-				</section>
-				<section>
-					<div class="large-badge core"><div class="icon core-handshake"></div></div>
-					<p>Handshake</p>
-				</section>
-				<section>
-					<div class="large-badge core"><div class="icon core-propeller"></div></div>
-					<p>Propeller</p>
-				</section>
-				<section>
-					<div class="large-badge core"><div class="icon core-win"></div></div>
-					<p>Serves to win</p>
-				</section>
-				<section>
-					<div class="large-badge core"><div class="icon core-shine"></div></div>
-					<p>Shine-On</p>
-				</section>
-				<section>
-					<div class="large-badge core"><div class="icon core-thinking"></div></div>
-					<p>Beyond Thinking</p>
-				</section>
-			</div>
-			<div class="row badge-category">
-				<p class="category-title">Engineering</p>
-				<section>
-					<div class="large-badge engineering"><div class="icon engineering-java"></div></div>
-					<p>Java Barista</p>
-				</section>
-				<section>
-					<div class="large-badge engineering"><div class="icon engineering-baby"></div></div>
-					<p>Baby Byte</p>
-				</section>
-				<section>
-					<div class="large-badge engineering"><div class="icon engineering-perl"></div></div>
-					<p>Mother of Perl</p>
-				</section>
-				<section>
-					<div class="large-badge engineering"><div class="icon engineering-clean"></div></div>
-					<p>Clean Coder</p>
-				</section>
-				<section>
-					<div class="large-badge engineering"><div class="icon engineering-scrumcious"></div></div>
-					<p>Scrumcious</p>
-				</section>
-				<section>
-					<div class="large-badge engineering"><div class="icon engineering-lean"></div></div>
-					<p>Lean and Mean</p>
-				</section>
-			</div>
-			<div class="row badge-category">
-				<p class="category-title">Design</p>
-				<section>
-					<div class="large-badge design"><div class="icon design-pixel"></div></div>
-					<p>Pixel Pushre</p>
-				</section>
-				<section>
-					<div class="large-badge design"><div class="icon design-vinci"></div></div>
-					<p>Da Vinci</p>
-				</section>
-				<section>
-					<div class="large-badge design"><div class="icon design-bootstrapper"></div></div>
-					<p>Bootstrapper</p>
-				</section>
-				<section>
-					<div class="large-badge design"><div class="icon design-gridlocker"></div></div>
-					<p>Gridlocker</p>
-				</section>
-				<section>
-					<div class="large-badge design"><div class="icon design-guru"></div></div>
-					<p>Graphics Guru</p>
-				</section>
-				<section>
-					<div class="large-badge design"><div class="icon design-bff"></div></div>
-					<p>Devs BFF</p>
-				</section>
+				<% @badge_categories.each do |key, badges| %>
+						<p class="category-title"><%= key %></p>
+						<% badges.each do |badge| %>
+								<section>
+									<div class="large-badge <%= badge.badge_category.short_name %>"><div class="icon badge-category-name <%= badge.badge_category.short_name %>-<%= badge.short_name %>"></div>
+									</div>
+									<p><%= badge.name %></p>
+								</section>
+						<% end %>
+				<% end %>
 			</div>
 		</section>
 	</div>

@@ -19,11 +19,19 @@ class ShouterController < ApplicationController
 	end
 
 	def new
+		badges
+		#badge_categories
 		@shout = Shout.new
 	end
 
 	def create
 		receiver = User.find_by(email: permit_params[:email])
+
+		if receiver == current_user
+			redirect_to new_shout_path, alert: "Nice try. You cannot shout at your self."
+			return
+		end
+
 		badge = Badge.find(permit_params[:badge_id])
 
 		@shout = Shout.new(

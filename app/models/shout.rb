@@ -9,10 +9,5 @@ class Shout < ActiveRecord::Base
 	has_many :likes
 	has_many :comments
 
-
-
-	# def liked(shout)
- #    	sql = "select likes.user_id, likes.shout_id from shouts, likes where shouts.id = likes.shout_id and likes.user_id = ?"
-    	
- #  	end
+	validates :email, presence: true
 end

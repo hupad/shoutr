@@ -19,15 +19,6 @@ class User < ActiveRecord::Base
   	self.first_name + " " + self.last_name
   end
 
-
-  private
-
-  def email_format
-    if ( self.email.split("@")[1] != "dealersocket.com" )
-      errors.add(:email, "You can sign up only with dealersocket email.")
-    end
-  end
-
   def liked_shouts
     
     likes = Like.joins(:shout)
@@ -41,6 +32,14 @@ class User < ActiveRecord::Base
 
     @likes_shout_map
 
+  end
+
+  private
+
+  def email_format
+    if ( self.email.split("@")[1] != "dealersocket.com" )
+      errors.add(:email, "You can sign up only with dealersocket email.")
+    end
   end
 
 end
