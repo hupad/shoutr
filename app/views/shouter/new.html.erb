@@ -1,21 +1,19 @@
 <h1>New Shout</h1>
 
-<%= simple_form_for @shout do |f| %>
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<div class="form-group">
-				<%= f.input :email, class: "form-control", placeholder: "Enter employee's email.", label: false  %>
-			</div>
-			<div class="form-group">
-				<%= f.input :notes, as: :text, class: "form-control", placeholder: "Why? Give a reason why you are shouting.", label: false %>
-			</div>
-			<div>
-				<%= f.select :badge_id, Badge.all.map { |r| [r.name, r.id] }, label: false, prompt: "Select a badge." %>
-			</div>
-			<br>
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Shout!</button>
-			</div>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<input type="text" id="employeeEmail" class="form-control", placeholder="Enter employee's email." />
+		</div>
+		<div class="form-group">
+			<textarea id="reason" rows="4" cols="50" placeholder = "Why? Give a reason why you want to shout.">
+				
+			</textarea>
+		</div>
+		<br>
+		<div class="form-group">
+			<button type="submit" id="btnShout" class="btn btn-primary">Shout!</button>
 		</div>
 	</div>
-<% end %>
+</div>

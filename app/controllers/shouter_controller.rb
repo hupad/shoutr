@@ -20,29 +20,35 @@ class ShouterController < ApplicationController
 
 	def new
 		badges
-		#badge_categories
 		@shout = Shout.new
 	end
 
 	def create
-		receiver = User.find_by(email: permit_params[:email])
+		
+		receiver = UserValidator.validate permit_params[:email], current_user
 
-		if receiver == current_user
-			redirect_to new_shout_path, alert: "Nice try. You cannot shout at your self."
+		if receiver.nil?
+			flash[:alert] = "Nice try. You cannot shout at your self."
+
+			respond_to do |format|
+				format.js {render nothing: true} 
+			end
 			return
 		end
 
 		badge = Badge.find(permit_params[:badge_id])
-
 		@shout = Shout.new(
 			sender_id: current_user.id,
 			receiver_id: receiver.id,
 			notes: permit_params[:notes],
+			badge: badge
 		)
 		
-		@shout.badge = badge
 		if @shout.save
-			redirect_to root_path, notice: "Your shout has been posted."
+			flash[:notice] = "Your shout has been posted."
+		end
+		respond_to do |format|
+			format.js {render nothing: true}
 		end
 	end
 

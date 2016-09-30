@@ -1,73 +1,28 @@
 <h1><div class="icon news"></div><span>Shout History</span></h1>
 
-<div class="row shout">
-	<section class="shout-time">
-		<p>1 hour ago</p>
-	</section>
-	<section>
-		<div class="large-badge core">
-		<div class="icon core-handshake"></div></div>
-		<p><span class="shout-name">Greg Reynolds</span>was shouted by Jennifer Lee</p>
-		<p class="badge-name">Propeller Spinner</p>
-		<p class="badge-category">Core Values</p>
-		<p class="badge-why">Possession her thoroughly remarkably terminated man continuing.</p>
-	</section>
-	<section>
-		<div class="shout-activity">
-			<p class="like-wrapper"><span class="icon like"></span>12</p>
-			<p class="comment-wrapper"><span class="icon comment"></span>12</p>
-		</div>
-		<div class="shout-actions">
-			<p class="like-wrapper"><a href="#"><span class="icon like blue"></span>Like</a></p>
-			<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
-		</div>
-	</section>
-</div>
 
-<div class="row shout">
-	<section class="shout-time">
-		<p>3 hour ago</p>
-	</section>
-	<section>
-		<div class="large-badge engineering">
-		<div class="icon engineering-java"></div></div>
-		<p><span class="shout-name">Jennifer Lee</span>shouted by Greg Reynolds</p>
-		<p class="badge-name">Java Barista</p>
-		<p class="badge-category">Engineering</p>
-		<p class="badge-why">Possession her thoroughly remarkably terminated man continuing.</p>
-	</section>
-	<section>
-		<div class="shout-activity">
-			<p class="like-wrapper"><span class="icon like"></span>12</p>
-			<p class="comment-wrapper"><span class="icon comment"></span>12</p>
-		</div>
-		<div class="shout-actions">
-			<p class="like-wrapper"><a href="#"><span class="icon like blue"></span>Like</a></p>
-			<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
-		</div>
-	</section>
-</div>
-
-<div class="row shout">
-	<section class="shout-time">
-		<p>1 hour ago</p>
-	</section>
-	<section>
-		<div class="large-badge design">
-		<div class="icon design-gridlocker"></div></div>
-		<p><span class="shout-name">Brad Perry</span>was shouted by Jennifer Lee</p>
-		<p class="badge-name">Propeller Spinner</p>
-		<p class="badge-category">Core Values</p>
-		<p class="badge-why">Possession her thoroughly remarkably terminated man continuing.</p>
-	</section>
-	<section>
-		<div class="shout-activity">
-			<p class="like-wrapper"><span class="icon like"></span>12</p>
-			<p class="comment-wrapper"><span class="icon comment"></span>12</p>
-		</div>
-		<div class="shout-actions">
-			<p class="like-wrapper"><a href="#"><span class="icon like blue"></span>Like</a></p>
-			<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
-		</div>
-	</section>
-</div>
+<% @user.received_shouts.each do |shout| %>
+	<div class="row shout">
+		<section class="shout-time">
+			<p><%= time_ago_in_words (shout.created_at) %> ago</p>
+		</section>
+		<section>
+			<div class="large-badge <%= shout.badge.badge_category.short_name %>">
+			<div class="icon <%= shout.badge.badge_category.short_name %>-<%= shout.badge.short_name %>"></div></div>
+			<p><span class="shout-name"><%= shout.receiver.full_name %></span>was shouted by <%= shout.sender.full_name %></p>
+			<p class="badge-name"><%= shout.badge.name %></p>
+			<p class="badge-category"><%= shout.badge.badge_category.name %></p>
+			<p class="badge-why"><%= shout.notes %></p>
+		</section>
+		<section>
+			<div class="shout-activity">
+				<p class="like-wrapper"><span class="icon like"></span>12</p>
+				<p class="comment-wrapper"><span class="icon comment"></span>12</p>
+			</div>
+			<div class="shout-actions">
+				<p class="like-wrapper"><a href="#"><span class="icon like blue"></span>Like</a></p>
+				<p class="comment-wrapper"><a href="#"><span class="icon comment blue"></span>Comment</a></p>
+			</div>
+		</section>
+	</div>
+<% end %>

@@ -4,10 +4,10 @@
 	<div class="row shouts">
 		<section>
 			<div class="large-badge" id="largeBadgeCategory"><div class="icon" id="badgeType"></div></div>
-			<p class="badge-name">Java Barista</p>
-			<p class="badge-category">Engineering</p>
+			<p class="badge-name"></p>
+			<p class="badge-category" id="badgeCategory"></p>
 
-			<p class="badge-why">This employee crafts the perfect cup of code consistently. They serve the team with the freshest insight and implement accordingly.
+			<p class="badge-why">
 
 			</p>
 		</section>
@@ -20,7 +20,7 @@
 						<p class="category-title"><%= key %></p>
 						<% badges.each do |badge| %>
 								<section>
-									<div class="large-badge <%= badge.badge_category.short_name %>"><div class="icon badge-category-name <%= badge.badge_category.short_name %>-<%= badge.short_name %>"></div>
+									<div class="large-badge <%= badge.badge_category.short_name %>"><div class="icon badge-category-name <%= badge.badge_category.short_name %>-<%= badge.short_name %>" data-badge-name="<%= badge.name %>" data-badge-category-name = "<%= badge.badge_category.name %>" data-badge-id="<%= badge.id %>"></div>
 									</div>
 									<p><%= badge.name %></p>
 								</section>

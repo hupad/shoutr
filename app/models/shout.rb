@@ -8,6 +8,4 @@ class Shout < ActiveRecord::Base
 	belongs_to :badge
 	has_many :likes
 	has_many :comments
-
-	validates :email, presence: true
 end
